@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'sentenceGen/teacherLogin.css' %}" />
+        <title>Teacher</title>
+    </head>
+
+    <body>
+        <h2>Please login to view student scores</h2>
+        <form action="/sentence/attemptLogon/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Log On" />
+        </form>
+    </body>
+</html>

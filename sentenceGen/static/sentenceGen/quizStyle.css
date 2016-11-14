@@ -1,0 +1,19 @@
+body {
+    font-family: "Arial";
+    background-color: #d3dae5;
+}
+
+#title {
+    text-align: center;
+}
+
+#sentence {
+	text-align: center;
+}
+
+#problem {
+    background-color: #ffffff;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 5px;
+}
