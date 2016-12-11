@@ -3,6 +3,14 @@ from verbFunctions import *
 from NounFunctions import *
 from POSObjects import *
 
+from actionVerbs import *
+from adjectives import *
+from adverb import *
+from nameList import *
+from noun import *
+from nounList import *
+from verb import *
+
 # no modifiers on gerunds
 # singular pural for determiners
 
@@ -295,13 +303,13 @@ def isVowel(ch):
 
 def getRandNoun(noun):
     if noun.isGerund():
-        f = open('actionVerbs.txt')
+        f = getActionVerbs()
         return addIng(getRandWord(f))
     else:
         if noun.isName():
-            f = open('nameList.txt')
+            f = getNameList()
         else:
-            f = open('noun.txt')
+            f = getNoun()
         w = getRandWord(f)
         if noun.isSingular():
             if w[-1] == "s":
@@ -337,10 +345,11 @@ def getRandDO():
 def getRandVerb(verb):
     # gets a random verb according to the predetermined, randomly generated criteria
     if verb.getFunct() == 'action verb':
-        f = open('actionVerbs.txt')
+        f = getActionVerbs()
         return getRandWord(f)
     else:
-        f = open('linkingVerbs.txt')
+        f = getActionVerbs()
+        return getRandWord(f)
         
 def getPA():
     adj=Adjective('',function='predacate adjective')
@@ -349,7 +358,7 @@ def getPA():
 
     
 def getRandAdjective():
-    f = open('adjectives.txt')
+    f = getAdjectives()
     return getRandWord(f)
         
 def addIng(verb):
