@@ -3,6 +3,7 @@ from verbFunctions import *
 from NounFunctions import *
 from POSObjects import *
 
+
 from actionVerbs import *
 from adjectives import *
 from adverb import *
@@ -359,7 +360,9 @@ def getPA():
     
 def getRandAdjective():
     f = getAdjectives()
-    return getRandWord(f)
+    return random.choice(f.splitlines())
+
+    #return getRandWord(f)
         
 def addIng(verb):
     if type(verb)==str:
@@ -424,7 +427,7 @@ def getRandPrepPhrase():
     prepPhrase = addDescriptorsNoun()
 
 def getRandWord(f):
-    return random.choice(f.rstrip()
+    return random.choice(f.splitlines())
 
 mySentence = (getSentence())
 print(mySentence)
