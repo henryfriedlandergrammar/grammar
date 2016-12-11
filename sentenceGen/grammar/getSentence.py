@@ -295,13 +295,13 @@ def isVowel(ch):
 
 def getRandNoun(noun):
     if noun.isGerund():
-        f = open('./sentenceGen/grammar/POSLists/actionVerbs.txt')
+        f = open('actionVerbs.txt')
         return addIng(getRandWord(f))
     else:
         if noun.isName():
-            f = open('./sentenceGen/grammar/POSLists/nameList.txt')
+            f = open('nameList.txt')
         else:
-            f = open('./sentenceGen/grammar/POSLists/noun.txt')
+            f = open('noun.txt')
         w = getRandWord(f)
         if noun.isSingular():
             if w[-1] == "s":
@@ -337,10 +337,10 @@ def getRandDO():
 def getRandVerb(verb):
     # gets a random verb according to the predetermined, randomly generated criteria
     if verb.getFunct() == 'action verb':
-        f = open('./sentenceGen/grammar/POSLists/actionVerbs.txt')
+        f = open('actionVerbs.txt')
         return getRandWord(f)
     else:
-        f = open('./sentenceGen/grammar/POSLists/linkingVerbs.txt')
+        f = open('linkingVerbs.txt')
         
 def getPA():
     adj=Adjective('',function='predacate adjective')
@@ -349,7 +349,7 @@ def getPA():
 
     
 def getRandAdjective():
-    f = open('./sentenceGen/grammar/POSLists/adjectives.txt')
+    f = open('adjectives.txt')
     return getRandWord(f)
         
 def addIng(verb):
