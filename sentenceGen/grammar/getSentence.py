@@ -424,7 +424,7 @@ def getRandPrepPhrase():
     prepPhrase = addDescriptorsNoun()
 
 def getRandWord(f):
-    return random.choice(f.readlines()).rstrip()
+    return random.choice(f.rstrip()
 
 mySentence = (getSentence())
 print(mySentence)
